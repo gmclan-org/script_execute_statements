@@ -1,6 +1,6 @@
 # script_execute_statements()
 
-function which executes only non-function parts of scripts.
+Function which executes only those parts of scripts, which aren't inside any function (global part).
 
 ### How it works?
 
@@ -31,10 +31,10 @@ function SCR_A() {} // this have same name as script, so calling SCR_A() will ex
 function SCR_B() {} // this have different name as script, so calling SCR_B() will execute this function, but calling MY_SCRIPT() will not use it
 ```
 
-So, when calling `MY_SCRIPT` if there's no function with same name, you can execute normal statements (which aren't inside any function body) during game as many times as you wish.<br>
+So, when calling `MY_SCRIPT` if there's no function with same name, you can execute normal statements (global part - which aren't inside any function body) during game as many times as you wish.<br>
 But there's no way to call `SCR_A` statements this way.
 
-What's worse `script_execute()` will also execute functions only in case of Legacy Scripts, but will execute statements in case of scritps which have unique name (modern 2.3+ way).
+What's worse `script_execute()` will also execute functions only in case of Legacy Scripts, but will execute statements in case of scritps which have unique name (modern 2.3+ way). Also, `asset_get_index()` returns function first, rather than script, if there are both having same name.
 
 Function `script_execute_statements(scr_name)` solves that, by doing a big loop on all GM scripts and functions, searching for pointer for scripts which have same name as functions - and always executes scripts in a new way.
 This function have no other arguments, as scripts cannot have arguments too - only functions have them.
