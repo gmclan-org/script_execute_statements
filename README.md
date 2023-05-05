@@ -1,6 +1,6 @@
 # Script helpers v2.0
 
-This small library two new functions to project:
+This small library adds two new functions to project(s):
 
 - [script_get_functions()](#script_get_functionsscript)
 - [script_execute_statements()](#script_execute_statementsscript)
@@ -15,7 +15,7 @@ Returns array of global scope functions defined inside script resource. Returns 
 
 ## script_execute_statements(script)
 
-Function which executes only those parts of scripts, which aren't inside any function (global part).
+Function which executes only those parts of scripts, which aren't inside any function (global scope statements part).
 
 ### How it works?
 
