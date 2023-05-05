@@ -1,4 +1,19 @@
-# script_execute_statements()
+# Script helpers v2.0
+
+This small library two new functions to project:
+
+- [script_get_functions()](#script_get_functionsscript)
+- [script_execute_statements()](#script_execute_statementsscript)
+
+Whole code is inside `script_execute_statements`. `script_test` and `script_test_legacy` are for demo purposes only and can be safely removed.
+
+## script_get_functions(script)
+
+Returns array of global scope functions defined inside script resource. Returns empty array, if script not exist, or is a global function only.
+
+`scr` can be a valid script name as resource name (integer), or a string.
+
+## script_execute_statements(script)
 
 Function which executes only those parts of scripts, which aren't inside any function (global part).
 
